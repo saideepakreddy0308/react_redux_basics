@@ -9,5 +9,7 @@ const reducers = combineReducers({
     // here, allProducts is a key and productReducer is a value.
     // now for creating the store, we will create a file called store.js in redux folder.
 
-    
+
 });
+
+export default reducers;

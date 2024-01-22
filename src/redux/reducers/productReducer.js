@@ -1,5 +1,6 @@
 // Reducers always take initial state and action as parameters and return a new state.
 // We created this file to hold all the action types, and after productActions.js and action-types.js, we will create productReducer.js file.
+import { ActionTypes } from "../constants/action-types";
 
 const initialState = {
     products: [{
@@ -9,7 +10,7 @@ const initialState = {
     }],
 };
 
-export const productReducer = (state, {type, payload}) => {
+export const productReducer = (state = initialState, {type, payload}) => {
     switch (type) {
         case ActionTypes.SET_PRODUCTS:
             return state;
