@@ -3,20 +3,27 @@
 import { ActionTypes } from "../constants/action-types";
 
 const initialState = {
-    products: [{
-        id: 1,
-        title: "Deepak",
-        category: "Programmer",
-    }],
+    products: [],
 };
 
 export const productReducer = (state = initialState, {type, payload}) => {
     switch (type) {
         case ActionTypes.SET_PRODUCTS:
-            return state;
+            return {...state, products: payload};
         default:
             return state;
     }
 }
 
 // now, we have created our first reducer, lets create our store and firstly, index.js
+
+export const selectedProductReducer = (state = {}, {type, payload}) => { // here we have used empty object as initial state
+    switch (type) {
+        case ActionTypes.SELECTED_PRODUCT:
+            return {...state, ...payload};
+        case ActionTypes.REMOVE_SELECTED_PRODUCT:
+            return {};
+        default:
+            return state;
+    }
+}
