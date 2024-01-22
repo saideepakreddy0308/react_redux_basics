@@ -1,0 +1,2 @@
+Now, to access the product which we have added , if we want to access the product, in our components,
+under components, we create first file headers.js
