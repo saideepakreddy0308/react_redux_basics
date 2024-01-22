@@ -3,7 +3,10 @@ import axios from "axios";
 // we need to get parameter getValue, so we will use useParams hook
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { selectedProduct, removeSelectedProduct } from "../redux/actions/productActions";
+import {
+  selectedProduct,
+  removeSelectedProduct,
+} from "../redux/actions/productActions";
 
 const ProductDetails = () => {
   const product = useSelector((state) => state.product);
@@ -25,7 +28,7 @@ const ProductDetails = () => {
   };
 
   useEffect(() => {
-    if (productId && productId !== "") fetchProductDetails();
+    if (productId && productId !== "") fetchProductDetails(productId);
     return () => {
       dispatch(removeSelectedProduct());
     };
